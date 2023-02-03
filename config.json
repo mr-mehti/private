@@ -1,0 +1,93 @@
+{
+  "log": {
+      "loglevel": "warning"
+  },
+  "routing": {
+      "domainStrategy": "AsIs",
+      "rules": [
+          {
+              "type": "field",
+              "ip": [
+                  "geoip:private"
+              ],
+              "outboundTag": "block"
+          }
+      ]
+  },
+  "inbounds": [
+      {
+          "listen": "0.0.0.0",
+          "port": 8880,
+          "protocol": "vmess",
+          "settings": {
+              "clients": [
+                  {
+                      "id": "db5afae4-ac23-41a6-8378-f307a9a47436"
+                  }
+              ]
+          },
+          "streamSettings": {
+              "network": "ws",
+              "security": "none"
+          }
+      },
+      {
+        "listen": "0.0.0.0",
+        "port": 443,
+        "protocol": "vmess",
+        "settings": {
+            "clients": [
+                {
+                    "id": "db5afae4-ac23-41a6-8378-f307a9a47436"
+                }
+            ]
+        },
+        "streamSettings": {
+            "network": "ws",
+            "security": "tls",
+            "tlsSettings": {
+                "certificates": [
+                    {
+                        "certificateFile": "/usr/local/etc/v2ray/pub.crt",
+                        "keyFile": "/usr/local/etc/v2ray/prv.key"
+                    }
+                ]
+            }
+        }
+      },
+      {
+        "listen": "0.0.0.0",
+        "port": 80,
+        "protocol": "vmess",
+        "settings": {
+            "clients": [
+                {
+                    "id": "db5afae4-ac23-41a6-8378-f307a9a47436"
+                }
+            ]
+        },
+        "streamSettings": {
+            "network": "http",
+            "security": "tls",
+            "tlsSettings": {
+                "certificates": [
+                    {
+                        "certificateFile": "/usr/local/etc/v2ray/pub.crt",
+                        "keyFile": "/usr/local/etc/v2ray/prv.key"
+                    }
+                ]
+            }
+        }
+      }
+  ],
+  "outbounds": [
+      {
+          "protocol": "freedom",
+          "tag": "direct"
+      },
+      {
+          "protocol": "blackhole",
+          "tag": "block"
+      }
+  ]
+}

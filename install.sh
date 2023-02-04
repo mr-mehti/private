@@ -1,3 +1,7 @@
+set -e
+EXIT_CODE=0
+command || EXIT_CODE=$?
+echo $EXIT_CODE
 sudo apt install unzip -y
 bash <(curl -L https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh)
 bash <(curl -L https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-dat-release.sh)

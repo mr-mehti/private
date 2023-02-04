@@ -8,4 +8,5 @@ sudo mv -f ~/private/pub.crt /usr/local/etc/v2ray/ || true
 sudo mv -f ~/private/prv.key /usr/local/etc/v2ray/ || true
 systemctl start v2ray && systemctl enable v2ray
 mv -f ./config.json /usr/local/etc/v2ray || true
+chmod +x ./bbr.sh && sudo bash ./bbr.sh && sudo ufw disable || true
 systemctl restart v2ray

@@ -2,8 +2,8 @@ server {
   listen 443 ssl;
   listen [::]:443 ssl;
   
-  ssl_certificate       /etc/v2ray/v2ray.crt;
-  ssl_certificate_key   /etc/v2ray/v2ray.key;
+  ssl_certificate       /usr/local/etc/v2ray/pub.crt;
+  ssl_certificate_key   /usr/local/etc/v2ray/prv.key;
   ssl_session_timeout 1d;
   ssl_session_cache shared:MozSSL:10m;
   ssl_session_tickets off;

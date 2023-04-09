@@ -39,8 +39,7 @@
                 "clients": [
                     {
                         "id": "db5afae4-ac23-41a6-8378-f307a9a47436",
-                        "alterId":1,
-                        "security":"aes-128-gcm"
+                        "alterId":1
                     }
                 ]
             },

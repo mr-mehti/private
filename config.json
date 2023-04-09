@@ -32,6 +32,29 @@
           }
       },
       {
+            "listen": "0.0.0.0",
+            "port": 2523,
+            "protocol": "vmess",
+            "settings": {
+                "clients": [
+                    {
+                        "id": "db5afae4-ac23-41a6-8378-f307a9a47436",
+                        "alterId":1,
+                        "security":"aes-128-gcm"
+                    }
+                ]
+            },
+            "streamSettings": {
+                "network": "tcp",
+                "tcpSettings": {
+                    "header": {
+                        "type": "none"
+                    }
+                },
+                "security": "none"
+            }
+      },
+      {
         "listen": "0.0.0.0",
         "port": 8421,
         "protocol": "vmess",

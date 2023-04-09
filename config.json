@@ -33,7 +33,7 @@
       },
       {
         "listen": "0.0.0.0",
-        "port": 443,
+        "port": 8421,
         "protocol": "vmess",
         "settings": {
             "clients": [
@@ -120,7 +120,22 @@
                 },
                 "security": "none"
             }
-        }
+        },
+        {
+            "listen": "0.0.0.0",
+            "port": 12345,
+            "protocol": "shadowsocks",
+            "settings": {
+                "method": "chacha20-ietf-poly1305",
+                "password": "1234"
+            },
+            "streamSettings": {
+                "network": "grpc",
+                "grpcSettings": {
+                    "serviceName": "michi"
+                }
+            }
+         }
   ],
   "outbounds": [
       {

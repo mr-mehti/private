@@ -157,7 +157,22 @@
                     "serviceName": "michi"
                 }
             }
-         }
+         },
+         {
+            "listen": "0.0.0.0",
+            "port": 1234,
+            "protocol": "vmess",
+            "settings": {
+                "clients": [
+                    {
+                        "id": "db5afae4-ac23-41a6-8378-f307a9a47436"
+                    }
+                ]
+            },
+            "streamSettings": {
+                "network": "tcp"
+            }
+        }
   ],
   "outbounds": [
       {

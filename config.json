@@ -32,52 +32,6 @@
           }
       },
       {
-            "listen": "0.0.0.0",
-            "port": 2523,
-            "protocol": "vmess",
-            "settings": {
-                "clients": [
-                    {
-                        "id": "db5afae4-ac23-41a6-8378-f307a9a47436",
-                        "alterId":1
-                    }
-                ]
-            },
-            "streamSettings": {
-                "network": "tcp",
-                "tcpSettings": {
-                    "header": {
-                        "type": "none"
-                    }
-                },
-                "security": "none"
-            }
-      },
-      {
-        "listen": "0.0.0.0",
-        "port": 8421,
-        "protocol": "vmess",
-        "settings": {
-            "clients": [
-                {
-                    "id": "db5afae4-ac23-41a6-8378-f307a9a47436"
-                }
-            ]
-        },
-        "streamSettings": {
-            "network": "ws",
-            "security": "tls",
-            "tlsSettings": {
-                "certificates": [
-                    {
-                        "certificateFile": "/usr/local/etc/v2ray/pub.crt",
-                        "keyFile": "/usr/local/etc/v2ray/prv.key"
-                    }
-                ]
-            }
-        }
-      },
-      {
         "listen": "0.0.0.0",
         "port": 80,
         "protocol": "vmess",
@@ -143,24 +97,9 @@
                 "security": "none"
             }
         },
-        {
-            "listen": "0.0.0.0",
-            "port": 12345,
-            "protocol": "shadowsocks",
-            "settings": {
-                "method": "chacha20-ietf-poly1305",
-                "password": "1234"
-            },
-            "streamSettings": {
-                "network": "grpc",
-                "grpcSettings": {
-                    "serviceName": "michi"
-                }
-            }
-         },
          {
             "listen": "0.0.0.0",
-            "port": 1234,
+            "port": 443,
             "protocol": "vmess",
             "settings": {
                 "clients": [
@@ -170,7 +109,20 @@
                 ]
             },
             "streamSettings": {
-                "network": "tcp"
+                "network": "gun",
+                "security": "tls",
+                "tlsSettings": {
+                    "serverName": "1.belbel.online",
+                    "certificates": [
+                        {
+                            "certificateFile": "/usr/local/etc/v2ray/pub.crt",
+                            "keyFile": "/usr/local/etc/v2ray/prv.key"
+                        }
+                    ]
+                },
+                "grpcSettings": {
+                    "serviceName": "GunService"
+                }
             }
         }
   ],

@@ -99,7 +99,7 @@
         },
          {
             "listen": "0.0.0.0",
-            "port": 443,
+            "port": 4040,
             "protocol": "vmess",
             "settings": {
                 "clients": [
@@ -113,6 +113,39 @@
                 "security": "tls",
                 "tlsSettings": {
                     "serverName": "1.belbel.online",
+                    "certificates": [
+                        {
+                            "certificateFile": "/usr/local/etc/v2ray/pub.crt",
+                            "keyFile": "/usr/local/etc/v2ray/prv.key"
+                        }
+                    ]
+                },
+                "grpcSettings": {
+                    "serviceName": "GunService"
+                }
+            }
+        },
+        {
+            "listen": "0.0.0.0",
+            "port": 443,
+            "protocol": "vless",
+            "settings": {
+                "clients": [
+                    {
+                        "id": "db5afae4-ac23-41a6-8378-f307a9a47436"
+                        "email": "love@v2fly.org"
+                    }
+                ],
+                "decryption": "none"
+            },
+            "streamSettings": {
+                "network": "gun",
+                "security": "tls",
+                "tlsSettings": {
+                    "serverName": "your_domain",
+                    "alpn": [
+                        "h2"
+                    ],
                     "certificates": [
                         {
                             "certificateFile": "/usr/local/etc/v2ray/pub.crt",

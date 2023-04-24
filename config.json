@@ -142,7 +142,7 @@
                 "network": "gun",
                 "security": "tls",
                 "tlsSettings": {
-                    "serverName": "your_domain",
+                    "serverName": "1.belbel.online",
                     "alpn": [
                         "h2"
                     ],

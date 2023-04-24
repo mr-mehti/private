@@ -1,6 +1,6 @@
 server {
-  listen 443 ssl;
-  listen [::]:443 ssl;
+  listen 8443 ssl;
+  listen [::]:8443 ssl;
   
   ssl_certificate       /usr/local/etc/v2ray/pub.crt;
   ssl_certificate_key   /usr/local/etc/v2ray/prv.key;

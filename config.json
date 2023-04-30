@@ -126,55 +126,67 @@
             }
         },
         {
-      "listen": null,
-      "port": 2087,
-      "protocol": "vmess",
-      "settings": {
-        "clients": [
-          {
-            "alterId": 0,
-            "email": "zg6vnud9sw",
-            "id": "db5afae4-ac23-41a6-8378-f307a9a47436"
-          }
-        ],
-        "disableInsecureEncryption": false
-      },
-      "streamSettings": {
-        "network": "grpc",
-        "security": "tls",
-        "tlsSettings": {
-          "serverName": "1.belbel.online",
-          "minVersion": "1.2",
-          "maxVersion": "1.3",
-          "cipherSuites": "",
-          "certificates": [
-            {
-              "certificateFile": "/usr/local/etc/v2ray/pub.crt",
-              "keyFile": "/usr/local/etc/v2ray/prv.key"
+            "listen": "0.0.0.0",
+            "port": 443,
+            "protocol": "shadowsocks",
+            "settings": {
+                "method": "chacha20-ietf-poly1305",
+                "password": "XXXX"
+            },
+            "streamSettings": {
+                "network": "tcp"
             }
-          ],
-          "alpn": [],
-          "settings": [
-            {
-              "allowInsecure": true,
-              "fingerprint": "",
-              "serverName": "1.boominio.live"
-            }
-          ]
         },
-        "grpcSettings": {
-          "serviceName": ""
-        }
-      },
-      "tag": "inbound-2087",
-      "sniffing": {
-        "enabled": true,
-        "destOverride": [
-          "http",
-          "tls"
-        ]
+        {
+            "listen": null,
+            "port": 2087,
+            "protocol": "vmess",
+            "settings": {
+              "clients": [
+                {
+                  "alterId": 0,
+                  "email": "zg6vnud9sw",
+                  "id": "db5afae4-ac23-41a6-8378-f307a9a47436"
+                }
+              ],
+              "disableInsecureEncryption": false
+            },
+            "streamSettings": {
+              "network": "grpc",
+              "security": "tls",
+              "tlsSettings": {
+                "serverName": "1.belbel.online",
+                "minVersion": "1.2",
+                "maxVersion": "1.3",
+                "cipherSuites": "",
+                "certificates": [
+                  {
+                    "certificateFile": "/usr/local/etc/v2ray/pub.crt",
+                    "keyFile": "/usr/local/etc/v2ray/prv.key"
+                  }
+                ],
+                "alpn": [],
+                "settings": [
+                  {
+                    "allowInsecure": true,
+                    "fingerprint": "",
+                    "serverName": "1.boominio.live"
+                  }
+                ]
+              },
+              "grpcSettings": {
+                "serviceName": ""
+              }
+            },
+            "tag": "inbound-2087",
+            "sniffing": {
+              "enabled": true,
+              "destOverride": [
+                "http",
+                "tls"
+              ]
+            }
       }
-    }
   ],
   "outbounds": [
       {

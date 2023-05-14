@@ -28,7 +28,7 @@
     },
       {
           "listen": "0.0.0.0",
-          "port": 8880,
+          "port": 443,
           "protocol": "vmess",
           "settings": {
               "clients": [
@@ -39,7 +39,16 @@
           },
           "streamSettings": {
               "network": "ws",
-              "security": "none"
+              "security": "none",
+             "security": "tls",
+             "tlsSettings": {
+                "certificates": [
+                    {
+                        "certificateFile": "/usr/local/etc/v2ray/pub.crt",
+                        "keyFile": "/usr/local/etc/v2ray/prv.key"
+                    }
+                ]
+             }
           }
       },
       {

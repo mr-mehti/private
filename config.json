@@ -219,6 +219,59 @@
         "security": "reality"
       },
       "tag": "inbound-1846"
+    },
+    {
+      "listen": "0.0.0.0",
+      "port": 1847,
+      "protocol": "vless",
+      "settings": {
+        "clients": [
+          {
+            "email": "0a71dei",
+            "flow": "",
+            "id": "52d335dc-e482-43ef-dc12-82430283917b"
+          }
+        ],
+        "decryption": "none",
+        "fallbacks": []
+      },
+      "sniffing": {
+        "destOverride": [
+          "http",
+          "tls"
+        ],
+        "enabled": true
+      },
+      "streamSettings": {
+        "httpSettings": {
+          "host": [],
+          "path": "/"
+        },
+        "network": "http",
+        "realitySettings": {
+          "dest": "xbox.com:443",
+          "maxClient": "",
+          "maxTimediff": 0,
+          "minClient": "",
+          "privateKey": "eOIk4dE-YE_XI_Ku67aQSOw8L6VYUOoCFgi-4R1tdF4",
+          "serverNames": [
+            "xbox.com",
+            "www.xbox.com"
+          ],
+          "settings": {
+            "fingerprint": "random",
+            "publicKey": "HcEHbhAFNpDw9yFoLcoEycPrRjCvOMIsdfkHXkRojFY",
+            "serverName": ""
+          },
+          "shortIds": [
+            "183ed9f4"
+          ],
+          "show": false,
+          "xver": 0
+        },
+        "security": "reality"
+      },
+      "tag": "inbound-1847"
     }
   ],
   "outbounds": [

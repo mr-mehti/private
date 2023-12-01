@@ -155,7 +155,7 @@
                 ]
               },
               "grpcSettings": {
-                "serviceName": "kjkk"
+                "serviceName": ""
               }
             },
             "tag": "inbound-2087",

@@ -56,7 +56,7 @@
                 "alpn": [],
                 "settings": [
                   {
-                    "allowInsecure": true,
+                    "allowInsecure": false,
                     "fingerprint": "",
                     "serverName": "1.boominio.live"
                   }

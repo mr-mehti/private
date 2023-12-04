@@ -25,31 +25,55 @@
       "sniffing": null,
       "streamSettings": null,
       "tag": "api"
-    },
-      {
-          "listen": "0.0.0.0",
-          "port": 443,
-          "protocol": "vmess",
-          "settings": {
+    },{
+            "listen": null,
+            "port": 443,
+            "protocol": "vmess",
+            "settings": {
               "clients": [
-                  {
-                      "id": "db5afae4-ac23-41a6-8378-f307a9a47436"
-                  }
-              ]
-          },
-          "streamSettings": {
-              "network": "ws",
-              "security": "none",
-             "security": "tls",
-             "tlsSettings": {
+                {
+                  "alterId": 0,
+                  "email": "123",
+                  "id": "dd2aaae1-ac23-431b1-1338-a2f1bfaf7fd1"
+                }
+              ],
+              "disableInsecureEncryption": true
+            },
+            "streamSettings": {
+              "network": "grpc",
+              "security": "tls",
+              "tlsSettings": {
+                "serverName": "1.belbel.online",
+                "minVersion": "1.3",
+                "maxVersion": "1.3",
+                "cipherSuites": "",
                 "certificates": [
-                    {
-                        "certificateFile": "/usr/local/etc/v2ray/pub.crt",
-                        "keyFile": "/usr/local/etc/v2ray/prv.key"
-                    }
+                  {
+                    "certificateFile": "/usr/local/etc/v2ray/pub.crt",
+                    "keyFile": "/usr/local/etc/v2ray/prv.key"
+                  }
+                ],
+                "alpn": [],
+                "settings": [
+                  {
+                    "allowInsecure": true,
+                    "fingerprint": "",
+                    "serverName": "1.boominio.live"
+                  }
                 ]
-             }
-          }
+              },
+              "grpcSettings": {
+                "serviceName": "main"
+              }
+            },
+            "tag": "inbound-2087",
+            "sniffing": {
+              "enabled": true,
+              "destOverride": [
+                "http",
+                "tls"
+              ]
+            }
       },
       {
         "listen": "0.0.0.0",

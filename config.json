@@ -228,6 +228,36 @@
                     "serviceName": "GunService"
                 }
             }
+        },
+        {
+            "port": 2096,
+            "protocol": "vless",
+            "settings": {
+                "clients": [
+                    {
+                        "id": "2a3263e2-891c-4446-b474-a8c63acb6e25", 
+                        "level": 0,
+                        "email": "love@v2fly.org"
+                    }
+                ],
+                "decryption": "none"
+            },
+            "streamSettings": {
+                "network": "ws",
+                "security": "tls",
+                "tlsSettings": {
+                  "serverName": "your_domain",
+                    "alpn": [
+                        "http/1.1"
+                    ],
+                    "certificates": [
+                        {
+                            "certificateFile": "/usr/local/etc/v2ray/pub.crt",
+                            "keyFile": "/usr/local/etc/v2ray/prv.key"
+                        }
+                    ]
+                }
+            }
         }
   ],
   "outbounds": [

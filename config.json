@@ -25,30 +25,6 @@
       "sniffing": null,
       "streamSettings": null,
       "tag": "api"
-    },
-      {
-        "listen": "0.0.0.0",
-        "port": 80,
-        "protocol": "vmess",
-        "settings": {
-            "clients": [
-                {
-                    "id": "db5afae4-ac23-41a6-8378-f307a9a47436"
-                }
-            ]
-        },
-        "streamSettings": {
-            "network": "http",
-            "security": "tls",
-            "tlsSettings": {
-                "certificates": [
-                    {
-                        "certificateFile": "/usr/local/etc/v2ray/pub.crt",
-                        "keyFile": "/usr/local/etc/v2ray/prv.key"
-                    }
-                ]
-            }
-        }
       },
       {
             "listen": "0.0.0.0",
@@ -258,7 +234,93 @@
                     ]
                 }
             }
+        },
+        {
+            "port": 2083,
+            "protocol": "vless",
+            "settings": {
+                "clients": [
+                    {
+                        "id": "2a3263e2-891c-4446-b474-a8c63acb6e25", 
+                        "level": 0,
+                        "email": "love@v2fly.org"
+                    }
+                ],
+                "decryption": "none"
+            },
+            "streamSettings": {
+                "network": "ws",
+                "security": "tls",
+                "tlsSettings": {
+                  "serverName": "your_domain",
+                    "alpn": [
+                        "http/1.1"
+                    ],
+                    "certificates": [
+                        {
+                            "certificateFile": "/usr/local/etc/v2ray/pub.crt",
+                            "keyFile": "/usr/local/etc/v2ray/prv.key"
+                        }
+                    ]
+                }
+            }
+        },
+    {
+      "listen": null,
+      "port": 80,
+      "protocol": "vless",
+      "settings": {
+        "clients": [
+          {
+            "email": "p7aoakic",
+            "flow": "",
+            "id": "2a3263e2-891c-4446-b474-a8c63acb6e25"
+          }
+        ],
+        "decryption": "none",
+        "fallbacks": []
+      },
+      "sniffing": {
+        "destOverride": [
+          "http",
+          "quic",
+          "fakedns",
+          "tls"
+        ],
+        "enabled": false,
+        "metadataOnly": false,
+        "routeOnly": false
+      },
+      "streamSettings": {
+        "network": "ws",
+        "security": "none",
+        "sockopt": {
+          "V6Only": false,
+          "acceptProxyProtocol": false,
+          "dialerProxy": "",
+          "domainStrategy": "UseIP",
+          "interface": "",
+          "mark": 0,
+          "tcpFastOpen": false,
+          "tcpKeepAliveIdle": 300,
+          "tcpKeepAliveInterval": 0,
+          "tcpMaxSeg": 1440,
+          "tcpMptcp": false,
+          "tcpNoDelay": false,
+          "tcpUserTimeout": 10000,
+          "tcpWindowClamp": 600,
+          "tcpcongestion": "bbr",
+          "tproxy": "off"
+        },
+        "wsSettings": {
+          "acceptProxyProtocol": false,
+          "headers": {},
+          "host": "",
+          "path": "/telegram-@Lookivpn,telegram-Lookivpn,telegram-Lookivpn,telegram-Lookivpn,telegram-Lookivpn,telegram-Lookivpn,telegram-Lookivpn,telegram-Lookivpn,telegram-Lookivpn,telegram-Lookivpn,telegram-Lookivpn,telegram-Lookivpn,telegram-Lookivpn,telegram-Lookivpn,telegram-Lookivpn,Mmdv2rayng-V2rayngmmd-telegram-mehran-v2ray?ed=2056"
         }
+      },
+      "tag": "inbound-80"
+    }
   ],
   "outbounds": [
       {

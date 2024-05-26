@@ -266,14 +266,13 @@
             }
         },
     {
-      "listen": null,
       "port": 80,
       "protocol": "vless",
       "settings": {
         "clients": [
           {
             "email": "p7aoakic",
-            "flow": "",
+            "level": 0,
             "id": "2a3263e2-891c-4446-b474-a8c63acb6e25"
           }
         ],
@@ -294,24 +293,6 @@
       "streamSettings": {
         "network": "ws",
         "security": "none",
-        "sockopt": {
-          "V6Only": false,
-          "acceptProxyProtocol": false,
-          "dialerProxy": "",
-          "domainStrategy": "UseIP",
-          "interface": "",
-          "mark": 0,
-          "tcpFastOpen": false,
-          "tcpKeepAliveIdle": 300,
-          "tcpKeepAliveInterval": 0,
-          "tcpMaxSeg": 1440,
-          "tcpMptcp": false,
-          "tcpNoDelay": false,
-          "tcpUserTimeout": 10000,
-          "tcpWindowClamp": 600,
-          "tcpcongestion": "bbr",
-          "tproxy": "off"
-        },
         "wsSettings": {
           "acceptProxyProtocol": false,
           "headers": {},

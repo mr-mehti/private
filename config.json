@@ -266,7 +266,7 @@
             }
         },
     {
-      "port": 80,
+      "port": 2020,
       "protocol": "vless",
       "settings": {
         "clients": [
@@ -287,7 +287,31 @@
         }
       },
       "tag": "inbound-80"
-    }
+    },
+    {
+        "listen": "0.0.0.0",
+        "port": 80,
+        "protocol": "vmess",
+        "settings": {
+            "clients": [
+                {
+                    "id": "db5afae4-ac23-41a6-8378-f307a9a47436"
+                }
+            ]
+        },
+        "streamSettings": {
+            "network": "http",
+            "security": "tls",
+            "tlsSettings": {
+                "certificates": [
+                    {
+                        "certificateFile": "/usr/local/etc/v2ray/pub.crt",
+                        "keyFile": "/usr/local/etc/v2ray/prv.key"
+                    }
+                ]
+            }
+        }
+      }
   ],
   "outbounds": [
       {

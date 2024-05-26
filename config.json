@@ -292,6 +292,9 @@
   "outbounds": [
       {
           "protocol": "freedom",
+          "settings": {
+            "domainStrategy": "UseIP"
+          },
           "tag": "direct"
       },
       {

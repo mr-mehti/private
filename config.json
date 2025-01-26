@@ -233,79 +233,7 @@
           ]
         }
       }
-    },
-    {
-      "allocate": {
-        "concurrency": 3,
-        "refresh": 5,
-        "strategy": "always"
-      },
-      "listen": null,
-      "port": 443,
-      "protocol": "vless",
-      "settings": {
-        "clients": [
-          {
-            "email": "jk3kg556",
-            "flow": "",
-            "id": "35450534-cacc-4b76-a1ec-7710569a0490"
-          }
-        ],
-        "decryption": "none",
-        "fallbacks": []
-      },
-      "sniffing": {
-        "destOverride": [
-          "http",
-          "tls",
-          "quic",
-          "fakedns"
-        ],
-        "enabled": false,
-        "metadataOnly": false,
-        "routeOnly": false
-      },
-      "streamSettings": {
-        "network": "xhttp",
-        "security": "tls",
-        "tlsSettings": {
-          "alpn": [
-            "h3",
-            "h2",
-            "http/1.1"
-          ],
-          "certificates": [
-            {
-              "buildChain": false,
-              "certificateFile": "/usr/local/etc/v2ray/pub.crt",
-              "keyFile": "/usr/local/etc/v2ray/prv.key",
-              "ocspStapling": 3600,
-              "oneTimeLoading": false,
-              "usage": "encipherment"
-            }
-          ],
-          "cipherSuites": "",
-          "disableSystemRoot": false,
-          "enableSessionResumption": false,
-          "maxVersion": "1.3",
-          "minVersion": "1.3",
-          "rejectUnknownSni": false,
-          "serverName": "1.battlesymphony.fun"
-        },
-        "xhttpSettings": {
-          "headers": {},
-          "host": "",
-          "mode": "auto",
-          "noSSEHeader": false,
-          "path": "/",
-          "scMaxBufferedPosts": 30,
-          "scMaxEachPostBytes": "1000000",
-          "xPaddingBytes": "100-1000"
-        }
-      },
-      "tag": "inbound-2096"
     }
-    
   ],
   "outbounds": [
     {

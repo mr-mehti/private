@@ -234,7 +234,6 @@
         }
       }
     },
-    
     {
       "allocate": {
         "concurrency": 3,
@@ -279,7 +278,7 @@
             {
               "buildChain": false,
               "certificateFile": "/usr/local/etc/v2ray/pub.crt",
-              "keyFile": "/usr/local/etc/v2ray/prv.key"
+              "keyFile": "/usr/local/etc/v2ray/prv.key",
               "ocspStapling": 3600,
               "oneTimeLoading": false,
               "usage": "encipherment"

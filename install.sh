@@ -11,3 +11,5 @@ systemctl start v2ray && systemctl enable v2ray
 sudo mv -f ./config.json /usr/local/etc/v2ray || true
 chmod +x ./bbr.sh && sudo bash ./bbr.sh && sudo ufw disable || true
 systemctl restart v2ray
+sudo chmod +x ./fix-v2ray-user.sh
+sudo ./fix-v2ray-user.sh

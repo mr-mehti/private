@@ -1,18 +1,18 @@
 {
   "log": {
-    "loglevel": "warning"
+      "loglevel": "warning"
   },
   "routing": {
-    "domainStrategy": "AsIs",
-    "rules": [
-      {
-        "type": "field",
-        "ip": [
-          "geoip:private"
-        ],
-        "outboundTag": "block"
-      }
-    ]
+      "domainStrategy": "AsIs",
+      "rules": [
+          {
+              "type": "field",
+              "ip": [
+                  "geoip:private"
+              ],
+              "outboundTag": "block"
+          }
+      ]
   },
   "inbounds": [
     {
@@ -25,170 +25,248 @@
       "sniffing": null,
       "streamSettings": null,
       "tag": "api"
-    },
-    {
-      "listen": "0.0.0.0",
-      "port": 8881,
-      "protocol": "vmess",
-      "settings": {
-        "clients": [
-          {
-            "id": "db5afae4-ac23-41a6-8378-f307a9a47436"
-          }
-        ]
       },
-      "streamSettings": {
-        "network": "tcp",
-        "tcpSettings": {
-          "header": {
-            "type": "http",
-            "response": {
-              "version": "1.1",
-              "status": "200",
-              "reason": "OK",
-              "headers": {
-                "Content-Type": [
-                  "application/octet-stream",
-                  "video/mpeg",
-                  "application/x-msdownload",
-                  "text/html",
-                  "application/x-shockwave-flash"
+      {
+            "listen": "0.0.0.0",
+            "port": 8881,
+            "protocol": "vmess",
+            "settings": {
+                "clients": [
+                    {
+                        "id": "db5afae4-ac23-41a6-8378-f307a9a47436"
+                    }
+                ]
+            },
+            "streamSettings": {
+                "network": "tcp",
+                "tcpSettings": {
+                    "header": {
+                        "type": "http",
+                        "response": {
+                            "version": "1.1",
+                            "status": "200",
+                            "reason": "OK",
+                            "headers": {
+                                "Content-Type": [
+                                    "application/octet-stream",
+                                    "video/mpeg",
+                                    "application/x-msdownload",
+                                    "text/html",
+                                    "application/x-shockwave-flash"
+                                ],
+                                "Transfer-Encoding": [
+                                    "chunked"
+                                ],
+                                "Connection": [
+                                    "keep-alive"
+                                ],
+                                "Pragma": "no-cache"
+                            }
+                        }
+                    }
+                },
+                "security": "none"
+            }
+        },
+        {
+            "listen": null,
+            "port": 2087,
+            "protocol": "vmess",
+            "settings": {
+              "clients": [
+                {
+                  "alterId": 0,
+                  "email": "zg6vnud9sw",
+                  "id": "db5afae4-ac23-41a6-8378-f307a9a47436"
+                },
+                {
+                  "alterId": 0,
+                  "email": "zg6vn1ud9sw",
+                  "id": "2a3263e2-891c-4446-b474-a8c63acb6e25"
+                }
+              ],
+              "disableInsecureEncryption": false
+            },
+            "streamSettings": {
+              "network": "grpc",
+              "security": "tls",
+              "tlsSettings": {
+                "serverName": "1.belbel.online",
+                "minVersion": "1.2",
+                "maxVersion": "1.3",
+                "cipherSuites": "",
+                "certificates": [
+                  {
+                    "certificateFile": "/usr/local/etc/v2ray/pub.crt",
+                    "keyFile": "/usr/local/etc/v2ray/prv.key"
+                  }
                 ],
-                "Transfer-Encoding": [
-                  "chunked"
-                ],
-                "Connection": [
-                  "keep-alive"
-                ],
-                "Pragma": "no-cache"
+                "alpn": [],
+                "settings": [
+                  {
+                    "allowInsecure": true,
+                    "fingerprint": "",
+                    "serverName": "1.boominio.live"
+                  }
+                ]
+              },
+              "grpcSettings": {
+                "serviceName": ""
               }
+            },
+            "tag": "inbound-2087",
+            "sniffing": {
+              "enabled": true,
+              "destOverride": [
+                "http",
+                "tls"
+              ]
             }
-          }
+      },{
+            "listen": null,
+            "port": 443,
+            "protocol": "vmess",
+            "settings": {
+              "clients": [
+                {
+                  "alterId": 0,
+                  "email": "zg6vnud9sw",
+                  "id": "2a3263e2-891c-4446-b474-a8c63acb6e25"
+                }
+              ],
+              "disableInsecureEncryption": false
+            },
+            "streamSettings": {
+              "network": "grpc",
+              "security": "tls",
+              "tlsSettings": {
+                "serverName": "1.belbel.online",
+                "minVersion": "1.2",
+                "maxVersion": "1.3",
+                "cipherSuites": "",
+                "certificates": [
+                  {
+                    "certificateFile": "/usr/local/etc/v2ray/pub.crt",
+                    "keyFile": "/usr/local/etc/v2ray/prv.key"
+                  }
+                ],
+                "alpn": [],
+                "settings": [
+                  {
+                    "allowInsecure": true,
+                    "fingerprint": "",
+                    "serverName": "1.boominio.live"
+                  }
+                ]
+              },
+              "grpcSettings": {
+                "serviceName": ""
+              }
+            },
+            "tag": "inbound-20899",
+            "sniffing": {
+              "enabled": true,
+              "destOverride": [
+                "http",
+                "tls"
+              ]
+            }
+      },
+    {
+            "listen": "0.0.0.0",
+            "port": 8443,
+            "protocol": "vless",
+            "settings": {
+                "clients": [
+                    {
+                        "id": "2a3263e2-891c-4446-b474-a8c63acb6e25",
+                        "email": "love@v2fly.org"
+                    }
+                ],
+                "decryption": "none"
+            },
+            "streamSettings": {
+                "network": "gun",
+                "security": "tls",
+                "tlsSettings": {
+                    "serverName": "your_domain",
+                    "alpn": [
+                        "h2"
+                    ],
+                    "certificates": [
+                        {
+                            "certificateFile": "/usr/local/etc/v2ray/pub.crt",
+                            "keyFile": "/usr/local/etc/v2ray/prv.key"
+                        }
+                    ]
+                },
+                "grpcSettings": {
+                    "serviceName": "GunService"
+                }
+            }
         },
-        "security": "none"
-      }
-    },
-    {
-      "listen": null,
-      "port": 2087,
-      "protocol": "vmess",
-      "settings": {
-        "clients": [
-          {
-            "alterId": 0,
-            "email": "zg6vnud9sw",
-            "id": "db5afae4-ac23-41a6-8378-f307a9a47436"
-          },
-          {
-            "alterId": 0,
-            "email": "zg6vn1ud9sw",
-            "id": "2a3263e2-891c-4446-b474-a8c63acb6e25"
-          }
-        ],
-        "disableInsecureEncryption": false
-      },
-      "streamSettings": {
-        "network": "grpc",
-        "security": "tls",
-        "tlsSettings": {
-          "serverName": "1.belbel.online",
-          "minVersion": "1.2",
-          "maxVersion": "1.3",
-          "cipherSuites": "",
-          "certificates": [
-            {
-              "certificateFile": "/usr/local/etc/v2ray/pub.crt",
-              "keyFile": "/usr/local/etc/v2ray/prv.key"
+        {
+            "port": 2096,
+            "protocol": "vless",
+            "settings": {
+                "clients": [
+                    {
+                        "id": "2a3263e2-891c-4446-b474-a8c63acb6e25", 
+                        "level": 0,
+                        "email": "love@v2fly.org"
+                    }
+                ],
+                "decryption": "none"
+            },
+            "streamSettings": {
+                "network": "ws",
+                "security": "tls",
+                "tlsSettings": {
+                  "serverName": "your_domain",
+                    "alpn": [
+                        "http/1.1"
+                    ],
+                    "certificates": [
+                        {
+                            "certificateFile": "/usr/local/etc/v2ray/pub.crt",
+                            "keyFile": "/usr/local/etc/v2ray/prv.key"
+                        }
+                    ]
+                }
             }
-          ],
-          "alpn": [],
-          "settings": [
-            {
-              "allowInsecure": true,
-              "fingerprint": "",
-              "serverName": "1.boominio.live"
-            }
-          ]
         },
-        "grpcSettings": {
-          "serviceName": ""
-        }
-      },
-      "tag": "inbound-2087",
-      "sniffing": {
-        "enabled": true,
-        "destOverride": [
-          "http",
-          "tls"
-        ]
-      }
-    },
-    {
-      "listen": "0.0.0.0",
-      "port": 8443,
-      "protocol": "vless",
-      "settings": {
-        "clients": [
-          {
-            "id": "2a3263e2-891c-4446-b474-a8c63acb6e25",
-            "email": "love@v2fly.org"
-          }
-        ],
-        "decryption": "none"
-      },
-      "streamSettings": {
-        "network": "gun",
-        "security": "tls",
-        "tlsSettings": {
-          "serverName": "your_domain",
-          "alpn": [
-            "h2"
-          ],
-          "certificates": [
-            {
-              "certificateFile": "/usr/local/etc/v2ray/pub.crt",
-              "keyFile": "/usr/local/etc/v2ray/prv.key"
+        {
+            "port": 2083,
+            "protocol": "vless",
+            "settings": {
+                "clients": [
+                    {
+                        "id": "2a3263e2-891c-4446-b474-a8c63acb6e25", 
+                        "level": 0,
+                        "email": "love@v2fly.org"
+                    }
+                ],
+                "decryption": "none"
+            },
+            "streamSettings": {
+                "network": "ws",
+                "security": "tls",
+                "tlsSettings": {
+                  "serverName": "your_domain",
+                    "alpn": [
+                        "http/1.1"
+                    ],
+                    "certificates": [
+                        {
+                            "certificateFile": "/usr/local/etc/v2ray/pub.crt",
+                            "keyFile": "/usr/local/etc/v2ray/prv.key"
+                        }
+                    ]
+                }
             }
-          ]
         },
-        "grpcSettings": {
-          "serviceName": "GunService"
-        }
-      }
-    },
     {
-      "port": 2096,
-      "protocol": "vless",
-      "settings": {
-        "clients": [
-          {
-            "id": "2a3263e2-891c-4446-b474-a8c63acb6e25",
-            "level": 0,
-            "email": "love@v2fly.org"
-          }
-        ],
-        "decryption": "none"
-      },
-      "streamSettings": {
-        "network": "ws",
-        "security": "tls",
-        "tlsSettings": {
-          "serverName": "your_domain",
-          "alpn": [
-            "http/1.1"
-          ],
-          "certificates": [
-            {
-              "certificateFile": "/usr/local/etc/v2ray/pub.crt",
-              "keyFile": "/usr/local/etc/v2ray/prv.key"
-            }
-          ]
-        }
-      }
-    },
-    {
-      "listen": null,
-      "port": 2095,
+      "port": 80,
       "protocol": "vless",
       "settings": {
         "clients": [
@@ -209,43 +287,16 @@
         }
       },
       "tag": "inbound-80"
-    },
-    {
-      "listen": "0.0.0.0",
-      "port": 80,
-      "protocol": "vmess",
-      "settings": {
-        "clients": [
-          {
-            "id": "db5afae4-ac23-41a6-8378-f307a9a47436"
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "http",
-        "security": "tls",
-        "tlsSettings": {
-          "certificates": [
-            {
-              "certificateFile": "/usr/local/etc/v2ray/pub.crt",
-              "keyFile": "/usr/local/etc/v2ray/prv.key"
-            }
-          ]
-        }
-      }
     }
   ],
   "outbounds": [
-    {
-      "protocol": "freedom",
-      "settings": {
-        "domainStrategy": "UseIP"
+      {
+          "protocol": "freedom",
+          "tag": "direct"
       },
-      "tag": "direct"
-    },
-    {
-      "protocol": "blackhole",
-      "tag": "block"
-    }
+      {
+          "protocol": "blackhole",
+          "tag": "block"
+      }
   ]
 }

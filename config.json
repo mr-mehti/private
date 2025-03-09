@@ -88,30 +88,14 @@
       "settings": {
         "clients": [
           {
-            "id": "2a3263e2-891c-4446-b474-a8c63acb6e25",
+            "id": "b1ecf833-9387-4fa4-ace1-6644facbbb6a",
             "email": "love@v2fly.org"
           }
         ],
         "decryption": "none"
       },
       "streamSettings": {
-        "network": "gun",
-        "security": "tls",
-        "tlsSettings": {
-          "serverName": "your_domain",
-          "alpn": [
-            "h2"
-          ],
-          "certificates": [
-            {
-              "certificateFile": "/usr/local/etc/v2ray/pub.crt",
-              "keyFile": "/usr/local/etc/v2ray/prv.key"
-            }
-          ]
-        },
-        "grpcSettings": {
-          "serviceName": "GunService"
-        }
+        "network": "tcp"
       }
     },
     {

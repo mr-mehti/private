@@ -82,21 +82,140 @@
       }
     },
     {
-      "listen": "0.0.0.0",
+      "allocate": {
+        "concurrency": 3,
+        "refresh": 5,
+        "strategy": "always"
+      },
+      "listen": null,
       "port": 8443,
       "protocol": "vless",
       "settings": {
         "clients": [
           {
-            "id": "b1ecf833-9387-4fa4-ace1-6644facbbb6a",
-            "email": "love@v2fly.org"
+            "email": "user-7",
+            "flow": "",
+            "id": "2a3263e2-891c-4446-b474-a8c63acb6e25"
+          },
+          {
+            "email": "direct-7",
+            "flow": "",
+            "id": "34842069-dcb9-4595-bd60-20b0562c56e5"
           }
         ],
-        "decryption": "none"
+        "decryption": "none",
+        "fallbacks": []
+      },
+      "sniffing": {
+        "destOverride": [
+          "http",
+          "tls",
+          "quic",
+          "fakedns"
+        ],
+        "enabled": false,
+        "metadataOnly": false,
+        "routeOnly": false
       },
       "streamSettings": {
-        "network": "tcp"
-      }
+        "network": "ws",
+        "security": "tls",
+        "tlsSettings": {
+          "alpn": [
+            "h3",
+            "h2",
+            "http/1.1"
+          ],
+          "certificates": [
+            {
+              "buildChain": false,
+              "certificate": [
+                "-----BEGIN CERTIFICATE-----",
+                "MIIErjCCA5agAwIBAgIUBZhsk5qUvGrNY+fcesE2/QMGvRMwDQYJKoZIhvcNAQEL",
+                "BQAwgYsxCzAJBgNVBAYTAlVTMRkwFwYDVQQKExBDbG91ZEZsYXJlLCBJbmMuMTQw",
+                "MgYDVQQLEytDbG91ZEZsYXJlIE9yaWdpbiBTU0wgQ2VydGlmaWNhdGUgQXV0aG9y",
+                "aXR5MRYwFAYDVQQHEw1TYW4gRnJhbmNpc2NvMRMwEQYDVQQIEwpDYWxpZm9ybmlh",
+                "MB4XDTI1MDMwODEzMDgwMFoXDTQwMDMwNDEzMDgwMFowYjEZMBcGA1UEChMQQ2xv",
+                "dWRGbGFyZSwgSW5jLjEdMBsGA1UECxMUQ2xvdWRGbGFyZSBPcmlnaW4gQ0ExJjAk",
+                "BgNVBAMTHUNsb3VkRmxhcmUgT3JpZ2luIENlcnRpZmljYXRlMIIBIjANBgkqhkiG",
+                "9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvOH/JDbLdLY3wuXSxSPlCNeMME3hskzx178G",
+                "aKdgAUveyzvPFIG5rAZn1XzCd76lLbysxraZLPeQ8Uf0eIi0NDmmJJK0DwECEBPX",
+                "PHd+mfapte9tLJyAUUp4QVDfMehoFG3mgCisO7eZWgn/twiJlhxEex7WuJQb99s7",
+                "JIs21NhQ/mV2A4+ZG1+a0Jy+zr9BAdygGQSp+KQF/mgz+LanvGqTMvIix6CIYQ2R",
+                "zzUBO721zaSr/52wrwBkYAr4dP+p46poAsWoGzgwqmmNxcoFM4lzyRZQ+4vh6wMo",
+                "gfdG3giJQDDnb8H/daavvMM/UzRp1jjxDd7798b610flGRecFwIDAQABo4IBMDCC",
+                "ASwwDgYDVR0PAQH/BAQDAgWgMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcD",
+                "ATAMBgNVHRMBAf8EAjAAMB0GA1UdDgQWBBQ7w8Pt+wqLwcFh/KVd6giDY9VXEjAf",
+                "BgNVHSMEGDAWgBQk6FNXXXw0QIep65TbuuEWePwppDBABggrBgEFBQcBAQQ0MDIw",
+                "MAYIKwYBBQUHMAGGJGh0dHA6Ly9vY3NwLmNsb3VkZmxhcmUuY29tL29yaWdpbl9j",
+                "YTAxBgNVHREEKjAoghMqLm1lbW9yaWVzLTAwLnNwYWNlghFtZW1vcmllcy0wMC5z",
+                "cGFjZTA4BgNVHR8EMTAvMC2gK6AphidodHRwOi8vY3JsLmNsb3VkZmxhcmUuY29t",
+                "L29yaWdpbl9jYS5jcmwwDQYJKoZIhvcNAQELBQADggEBAKrr1E48Ck85Y4ZF8yRC",
+                "fKZEB7WzlwXDg/g3bm7iqDjwEyqtUnjJhrf4NZk8vaPv/W3694HuWo0de9Ao6kvJ",
+                "cUvNmFqbw7VUfG6QoKBK+mFp4Bwgq8TuqtwqAzzlBHhrgM2k6f3MBtbusnu4jIOV",
+                "nAkUJPVRbUHftvQeK+2n8l65KKraTUSeju5bhd9X/4EGu8ZL0Gw9inSA0amFod3D",
+                "exSne5di58lSzmfJ+ogcXJny15OTX/W/+BDKaAaYvZpRFfpBUTnyswx02+QLrbYg",
+                "KyWdsGKp4/l8O4nCbFaNe1kMOIw5cGN/jSqJne2BCmOmSyya9vyvkyVu7RjqiH/v",
+                "Z60=",
+                "-----END CERTIFICATE-----"
+              ],
+              "key": [
+                "-----BEGIN PRIVATE KEY-----",
+                "MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC84f8kNst0tjfC",
+                "5dLFI+UI14wwTeGyTPHXvwZop2ABS97LO88UgbmsBmfVfMJ3vqUtvKzGtpks95Dx",
+                "R/R4iLQ0OaYkkrQPAQIQE9c8d36Z9qm1720snIBRSnhBUN8x6GgUbeaAKKw7t5la",
+                "Cf+3CImWHER7Hta4lBv32zskizbU2FD+ZXYDj5kbX5rQnL7Ov0EB3KAZBKn4pAX+",
+                "aDP4tqe8apMy8iLHoIhhDZHPNQE7vbXNpKv/nbCvAGRgCvh0/6njqmgCxagbODCq",
+                "aY3FygUziXPJFlD7i+HrAyiB90beCIlAMOdvwf91pq+8wz9TNGnWOPEN3vv3xvrX",
+                "R+UZF5wXAgMBAAECggEAATxM0g/sf2KmKIeE71aZEj7V6aAtmHmwLU3QSdGQ3oFN",
+                "P32wXZbgDMC5kvTVd5+oiFn1gV+paD9lIQbsK17gwUsaC9KZcrp6QnoQWUXPO+X+",
+                "qmeBPdHD2+qr5BvjOEbbNqL/Z00DNc+XvulVofz6AjoRT2lEu04qUd7XwX+KbmFj",
+                "xNzpZhVgiF7/zN5BlTAI/lHjRXc53lWTkvnEujjs0/CnwnokeMvXAWDmeooWZADo",
+                "ViJ63yp+pcFvXqzBytQHvhkBG8Sk5D3dtzl/gdZo6I9Mi8UNpcrjzByIB6U7AB6p",
+                "IK/pHTHES+Nc3p0uPEi0+cHZ7959L8nUPJBkeNnJGQKBgQD2xfLbMAaECLMyv1dY",
+                "6QSV2q9TpjqbEC0hKXhrroR2BCGGh/jUeHyIoJhJqkQ24FVITomW37l3kWiae9Rc",
+                "e0lUEeNXtBp36EsbAnXMTR1EStyYNTofxDMjuncGRKK3Uj3T5YMWaVwLnIbTE1mI",
+                "cdDcEf6klBcbjTM2VIgYRSEMzwKBgQDD8e9u0aOWFtWgk+UL8JYxmWx7l3TDoW+a",
+                "g8IJ3OKu2C70OZKvgLKJ7BtQ9V4ch+WghyhV42t4cZAwiU94dB2KeMYLfJ5BDBOg",
+                "YWuGoWP+IqeKJPgRqLlPDvhfhX1/gygD6UGr0b2ex9TTLk87HIqhu5zVJvChAxS8",
+                "7lbMgOyeOQKBgQCqZVLlQMsu/mbmYrLopLXS19b6lqyfB9Nxs5YAHNhAOWgA4gDS",
+                "jYPIP8QIEbbagZrBu+FLuZ3yTwiAq4KefU7L6zIlDCq+ozrBIri+Yn0T+/FIdHB3",
+                "IN4DDK1FOb11gidJGpCiuAujxOhf9Vt8WMLUQuSnNc6i6qPzHvl+cLV6hwKBgG6i",
+                "0Fp2LDO2uPBuEUnokiV3R3WRUvCS2n0YIBuJiMTIc9qaF2TY+fY+Rj40DOt3IAS/",
+                "y9qTCj97f7qoDSMqDPP+tXQO7Rw1QW+xEhF2VwtLbeXmcdsmtVsaTMtCiFXTLGjo",
+                "75egWbypgFWtNDdgKjafxDHmRr/jCXaT7JaTxQahAoGBAJ2dkJy9x+axBeDVJhKt",
+                "fE5iNBsIQj0o0xliHofGeB3d5zrBK0HXu7BQQbkMNVUWh8wz5r4d8kYZWQGriZvM",
+                "yPgZUfSKeGaGBHK7ccMCVjN2/FuOVcyUOcIuzHUGKi8X+ku0mk+GIVayvYCNL6EY",
+                "JW+Q9k4EJlbQJqksNkHnClOB",
+                "-----END PRIVATE KEY-----",
+                ""
+              ],
+              "ocspStapling": null,
+              "oneTimeLoading": false,
+              "usage": "encipherment"
+            }
+          ],
+          "cipherSuites": "",
+          "disableSystemRoot": false,
+          "enableSessionResumption": false,
+          "maxVersion": "1.3",
+          "minVersion": "1.2",
+          "rejectUnknownSni": false,
+          "serverName": "memories-00.space",
+          "verifyPeerCertInNames": [
+            "dns.google",
+            "cloudflare-dns.com"
+          ]
+        },
+        "wsSettings": {
+          "acceptProxyProtocol": false,
+          "headers": {},
+          "heartbeatPeriod": 0,
+          "host": "",
+          "path": "/"
+        }
+      },
+      "tag": "inbound-8443"
     },
     {
       "listen": "0.0.0.0",
